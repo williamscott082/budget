@@ -1,16 +1,19 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
+    protected $dates = ['date'];
+
     protected $fillable = [
         'date',
         'beneficiary',
         'description',
         'category_id',
+        'account_id',
         'amount'
     ];
 
@@ -30,5 +33,10 @@ class Transaction extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function importStatement($file)
+    {
+
     }
 }

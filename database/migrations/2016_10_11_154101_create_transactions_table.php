@@ -18,10 +18,10 @@ class CreateTransactionsTable extends Migration
             $table->date('date');
             $table->text('description');
             $table->integer('amount');
-            $table->string('beneficiary_id')->nullable()->unsigned();
-            $table->integer('category_id')->nullable()->unsigned();
-            $table->integer('account_id')->nullable()->unsigned();
-            $table->integer('user_id')->nullable()->unsigned();
+            $table->integer('beneficiary_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('account_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }
